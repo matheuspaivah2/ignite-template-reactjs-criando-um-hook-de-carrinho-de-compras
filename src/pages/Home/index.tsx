@@ -27,11 +27,6 @@ const Home = (): JSX.Element => {
   const { addProduct, cart } = useCart();
 
   const cartItemsAmount = cart.reduce((sumAmount, product) => {
-    // if (sumAmount[product.id]) {
-    //   sumAmount[product.id] += 1;
-    // } else {
-    //   sumAmount[product.id] = 1;
-    // }
     sumAmount[product.id] = product.amount;
     return sumAmount;
   }, {} as CartItemsAmount);
@@ -62,7 +57,6 @@ const Home = (): JSX.Element => {
             type="button"
             data-testid="add-product-button"
             onClick={() => handleAddProduct(product.id)}
-            // disabled={cart[] <= 1}
           >
             <div data-testid="cart-product-quantity">
               <MdAddShoppingCart size={16} color="#FFF" />
